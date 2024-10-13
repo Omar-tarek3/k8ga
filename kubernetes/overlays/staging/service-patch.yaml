@@ -1,0 +1,28 @@
+- op: replace #action 
+  path: /metadata/name
+  value: staging-svc
+
+# - op: replace #action 
+#   path: metadata/labels/env
+#   value: staging
+
+# - op: replace #action 
+#   path: spec/selector/env
+#   value: staging
+
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: staging-svc  # staging svc name
+#   labels:
+#     app: gapcloud
+#     env: staging  #  environment label to staging
+# spec:
+#   selector:
+#     app: gapcloud
+#     env: staging  #  selector to match staging environment pods
+#   ports:
+#     - protocol: TCP
+#       port: 8080
+#       targetPort: 8080

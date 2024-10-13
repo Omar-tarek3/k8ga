@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gapcloud-deployment
+  labels:
+    app: gapcloud
+    env: prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gapcloud
+      env: prod
+  template:
+    metadata:
+      labels:
+        app: gapcloud
+        env: prod
+    spec:
+      containers:
+      - name: gapcloud
+        image: hello-world
+        ports:
+        - containerPort: 8080
+          name: app-port
+
+#INGRESS
+
+

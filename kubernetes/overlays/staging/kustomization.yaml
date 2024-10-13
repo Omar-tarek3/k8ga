@@ -1,0 +1,28 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+
+patches:
+  - target:
+      kind: Deployment
+      name: gapcloud-deployment
+    path: deployment-patch.yaml
+
+  - target:
+      kind: Service
+      name: gap-service
+    path: service-patch.yaml
+
+commonLabels:
+  env: staging
+
+images:
+- name: hello-world
+  newName: gapcloud-prod-image 
+  newTag: test
+  
+
+# images:
+#   - name: staging-image
+#     newTag: v1
