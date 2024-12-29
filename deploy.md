@@ -1,6 +1,6 @@
-- in prod k8s dir
-|__ deployment.yaml
-|__ svc.yaml
+- in prod k8s dir \
+|__ deployment.yaml \
+|__ svc.yaml \
 |__ ingress.yaml
 
 
